@@ -17,3 +17,5 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_URL = '/login/'
+
+AUTH_USER_MODEL = 'users.User'
