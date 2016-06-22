@@ -58,6 +58,3 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'fastvid.wsgi.application'
-
-
-
