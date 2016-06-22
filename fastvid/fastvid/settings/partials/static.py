@@ -10,6 +10,33 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'fastvid', 'static',)]
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(
+        PROJECT_ROOT_DIR,
+        'dist',
+        'static',
+)
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
+
+PIPELINE = {
+    'PIPELINE_ENABLED': False,
+    'STYLESHEETS': {
+        'fastvid': {
+            'source_filenames': (
+              'stylesheets/main.css',
+              'stylesheets/partials/*.css',
+            ),
+            'output_filename': 'stylesheets/fastvid.css',
+        }
+    }
+}
+
 # Media Files
 MEDIA_ROOT = os.path.join(
         PROJECT_ROOT_DIR,
