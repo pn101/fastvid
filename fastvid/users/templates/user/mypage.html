@@ -5,4 +5,10 @@
 {% block content %}
 <h1>{{ site_name }}</h1>
 <p>Hello, {{ request.user.first_name }} {{ request.user.last_name }}!</p>
+</br>
+<ul>
+    {% for post in posts %}
+    <li><a href="{% url 'posts:detail' pk=post.id %}"><h4>{{ post.title }}</h4></a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
