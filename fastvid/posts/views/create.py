@@ -1,5 +1,7 @@
 from django.views.generic import View
 from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.conf import settings
 
 from posts.utils import youtube
 
@@ -24,6 +26,12 @@ class PostCreateView(View):
                 title=title,
                 video_id=video_id,
                 content=content,
+        )
+
+        messages.add_message(
+                request,
+                messages.SUCCESS,
+                settings.POST_CREATE_SUCCESS_MESSAGE,
         )
 
         return redirect(post)
