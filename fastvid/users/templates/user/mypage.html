@@ -8,7 +8,7 @@
 </br>
 <ul>
     {% for post in posts %}
-    <li><a href="{% url 'posts:detail' pk=post.id %}"><h4>{{ post.title }}</h4></a></li>
+    <li><a href="{% url 'posts:detail' slug=post.hash_id %}"><h4>{{ post.title }}</h4></a></li>
     {% endfor %}
 </ul>
 {% endblock %}

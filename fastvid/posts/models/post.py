@@ -35,7 +35,7 @@ class Post(models.Model):
         return reverse(
                 'posts:detail',
                 kwargs={
-                    'pk': self.id,
+                    'slug': self.hash_id,
                 }
         )
 

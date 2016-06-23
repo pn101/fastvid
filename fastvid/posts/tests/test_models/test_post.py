@@ -35,3 +35,8 @@ class PostModelTestCase(TestCase):
                 self.post.get_youtube_embed_url(),
                 youtube_embed_url,
         )
+
+    def test_post_for_hash_id(self):
+        self.assertTrue(
+                self.post.hash_id,
+        )
