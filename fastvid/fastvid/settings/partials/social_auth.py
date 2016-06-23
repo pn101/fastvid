@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 import os
 
 
@@ -9,3 +10,5 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
+
+SOCIAL_AUTH_REDIRECT_LOGIN = redirect('user:mypage')
