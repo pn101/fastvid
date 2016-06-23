@@ -34,3 +34,8 @@ class Post(models.Model):
         return 'https://www.youtube.com/watch?v={video_id}'.format(
                 video_id=self.video_id
         )
+
+    def get_youtube_embed_url(self):
+        return 'https://www.youtube.com/embed/{video_id}'.format(
+                video_id=self.video_id
+        )
