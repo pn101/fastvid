@@ -29,3 +29,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_youtube_original_url(self):
+        return 'https://www.youtube.com/watch?v={video_id}'.format(
+                video_id=self.video_id
+        )
