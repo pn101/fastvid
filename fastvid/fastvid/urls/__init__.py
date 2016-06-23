@@ -7,6 +7,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+    url('', include('social.apps.django_app.urls', namespace='social')),
+
     url(r'^', include('users.urls', namespace='user')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
