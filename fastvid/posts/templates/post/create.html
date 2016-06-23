@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>{{ site_name }}</h1>
-<form action="" method="POST">
+<form action="{% url 'posts:create' %}" method="POST">
     {% csrf_token %}
     <input type="text" name="title" placeholder="title" required>
     <input type="text" name="video_id" placeholder="YouTube Video ID" required>
