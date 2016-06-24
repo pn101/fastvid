@@ -13,6 +13,5 @@ class MyPageView(LoginRequiredMixin, View):
                 'user/mypage.html',
                 {
                     'site_name': 'MyPage',
-                    'posts': Post.objects.all(),
                 }
         )
