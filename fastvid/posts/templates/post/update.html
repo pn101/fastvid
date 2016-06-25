@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ site_name }}</h1>
+<form action="" method="POST">
+    {% csrf_token %} 
+    <input type="text" name="title" value="{{ post.title }}">
+    <input type="text" name="video_id" value="{{ post.video_id }}">
+    <textarea name="content" value="{{ post.content }}"></textarea>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

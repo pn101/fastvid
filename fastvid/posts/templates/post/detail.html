@@ -7,4 +7,5 @@
 <iframe width="560" height="315" src="{{ post.youtube_embed_url }}" frameborder="0" allowfullscreen></iframe></br>
 <a href="{{ post.youtube_original_url }}" target="blank">Go to Youtube</a>
 <p>{{ post.content }}</p>
+<a href="{% url 'posts:update' slug=post.hash_id %}">Update Post</a>
 {% endblock %}
