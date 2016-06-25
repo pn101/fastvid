@@ -8,7 +8,7 @@
     {% csrf_token %} 
     <input type="text" name="title" value="{{ post.title }}">
     <input type="text" name="video_id" value="{{ post.video_id }}">
-    <textarea name="content" value="{{ post.content }}"></textarea>
+    <textarea name="content">{{ post.content }}</textarea>
     <input type="submit" value="Update">
 </form>
 {% endblock %}
