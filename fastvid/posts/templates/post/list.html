@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ site_name }}</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <img src="{{ post.youtube_thumbnail_url }}" alt="{{ post.title }}" height="68" width="90"></br>
+        <p><a href="{% url 'posts:detail' slug=post.hash_id %}">{{ post.title }}</a> uploaded by {{ post.user.username }}</p>
+    </li>
+    {% endfor %} 
+</ul>
+{% endblock %}
