@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ username }}'s Page</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        {{ post.title }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
