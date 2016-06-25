@@ -55,5 +55,6 @@ class PostCreateConfirmView(View):
 
                     'youtube_original_url': youtube.get_youtube_original_url(video_id),
                     'youtube_embed_url': youtube.get_youtube_embed_url(video_id),
+                    'youtube_thumbnail_url': youtube.get_youtube_thumbnail_url(video_id),
                 }
         )
