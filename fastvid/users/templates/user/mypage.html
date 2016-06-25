@@ -8,6 +8,7 @@
 </br>
 <ul>
     {% for post in request.user.post_set.all %}
+    <img src="{{ post.youtube_thumbnail_url }}" alt="{{ post.title }}" height="68" width="90">
     <li><a href="{% url 'posts:detail' slug=post.hash_id %}"><h4>{{ post.title }}</h4></a></li>
     {% endfor %}
 </ul>
