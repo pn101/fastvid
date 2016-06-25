@@ -5,6 +5,7 @@
 {% block content %}
 <h1>{{ site_name }}</h1>
 <p>Hello, {{ request.user.first_name }} {{ request.user.last_name }}!</p>
+<a href="{% url 'posts:create' %}">Create Post</a>
 </br>
 <ul>
     {% for post in request.user.post_set.all %}
