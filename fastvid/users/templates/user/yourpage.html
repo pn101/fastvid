@@ -7,7 +7,8 @@
 <ul>
     {% for post in posts %}
     <li>
-        {{ post.title }}
+    <img src="{{ post.youtube_thumbnail_url }}" alt="{{ post.title }}" height="68" width="90"></br>
+    <a href="{% url 'posts:detail' slug=post.hash_id %}">{{ post.title }}</a>
     </li>
     {% endfor %}
 </ul>
