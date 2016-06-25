@@ -8,7 +8,7 @@
     {% for post in posts %}
     <li>
         <img src="{{ post.youtube_thumbnail_url }}" alt="{{ post.title }}" height="68" width="90"></br>
-        <p><a href="{% url 'posts:detail' slug=post.hash_id %}">{{ post.title }}</a> uploaded by <a href="{% url 'yourpage' user_name=post.user %}">{{ post.user.username }}</a></p>
+        <p><a href="{% url 'posts:detail' slug=post.hash_id %}">{{ post.title }}</a> uploaded by <a href="{% url 'user:yourpage' user_name=post.user %}">{{ post.user.username }}</a></p>
     </li>
     {% endfor %} 
 </ul>
