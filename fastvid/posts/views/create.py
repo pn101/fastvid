@@ -2,11 +2,17 @@ from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
 from posts.utils import youtube
 
 
-class PostCreateView(View):
+class PostCreateView(PermissionRequiredMixin, View):
+
+    permission_required = 'posts.can_create_post'
+    raise_exception = True
+
+    # TODO: redirect to a more user friendly page
 
     def get(self, request, *args, **kwargs):
         return render(
