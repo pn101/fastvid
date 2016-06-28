@@ -14,4 +14,6 @@ urlpatterns = [
 
     url(r'^', include('users.urls', namespace='user')),
 
+    url(r'^api/', include('fastvid.urls.api', namespace='api')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

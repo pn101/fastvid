@@ -1,0 +1,1 @@
+from .postmodel import PostModelSerializer
