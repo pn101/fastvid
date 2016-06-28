@@ -1,7 +1,6 @@
 var main = function() {
     var postSlug = $('#comment-section').data('post-slug');
     var commentAPIURL = '/api/posts/' + postSlug + '/comments/';    
-    alert(commentAPIURL);
 
     $.ajax({
         url: commentAPIURL,
