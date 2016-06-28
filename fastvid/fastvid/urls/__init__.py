@@ -11,6 +11,7 @@ urlpatterns = [
 
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^posts/', include('posts.urls', namespace='posts')),
+    url(r'^tags/', include('tags.urls', namespace='tags')),
 
     url(r'^', include('users.urls', namespace='user')),
 

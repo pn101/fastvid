@@ -8,6 +8,12 @@
 <iframe width="560" height="315" src="{{ post.youtube_embed_url }}" frameborder="0" allowfullscreen></iframe></br>
 <a href="{{ post.youtube_original_url }}" target="blank">Go to Youtube</a>
 <p>{{ post.content }}</p>
+<h4>Tags</h4>
+<ul>
+    {% for tag in post.tag_set.all %}
+    <li><a href="{% url 'tags:detail' slug=tag.name %}">{{ tag.name }}</a></li>
+    {% endfor %}
+</ul>
 <a href="{% url 'posts:update' slug=post.hash_id %}">Update Post</a>
 </br>
 
