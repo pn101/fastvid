@@ -1,0 +1,20 @@
+from django.db import models
+
+from users.models import User
+
+
+class Tag(models.Model):
+
+    name = models.CharField(
+            max_length=256,
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    @property
+    def full_name(self):
+        return '#{name}'.format(name=self.name)
+
+    def __str__(self):
+        return self.full_name
