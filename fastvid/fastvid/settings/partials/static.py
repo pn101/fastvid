@@ -34,7 +34,17 @@ PIPELINE = {
             ),
             'output_filename': 'stylesheets/fastvid.css',
         }
+    },
+    'PIPELINE_ENABLED': False,
+    'JAVASCRIPT': {
+        'posts': {
+            'source_filenames': (
+              'js/posts.js',
+            ),
+            'output_filename': 'js/posts.js',
+        }
     }
+
 }
 
 # Media Files

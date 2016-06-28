@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load pipeline %}
 
 {% block title %}{{ site_name }}{% endblock %}
 
@@ -8,4 +9,16 @@
 <a href="{{ post.youtube_original_url }}" target="blank">Go to Youtube</a>
 <p>{{ post.content }}</p>
 <a href="{% url 'posts:update' slug=post.hash_id %}">Update Post</a>
+</br>
+
+<section id="comment-section">
+    <h3>Comments ({{ post.comment_set.count }})</h3>
+    <form class="comment-content">
+        <input type="text" name="content" placeholder="Add comment" required>
+        <input type="submit" value="Comment">
+    </form>
+</section>
+{% endblock %}
+{% block custom_javascript %}
+    {% javascript "posts" %}
 {% endblock %}
