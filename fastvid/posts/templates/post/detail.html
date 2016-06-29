@@ -14,6 +14,8 @@
     <li><a href="{% url 'tags:detail' slug=tag.name %}">{{ tag.full_name }}</a></li>
     {% endfor %}
 </ul>
+
+{% if request.user == post.user %}
 <form action="{% url "tags:add" %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="hash_id" id="" value="{{ post.hash_id }}">
@@ -21,6 +23,7 @@
     <input type="submit" value="Add Tag">
 </form>
 <a href="{% url 'posts:update' slug=post.hash_id %}">Update Post</a>
+{% endif %}
 </br>
 
 <section id="comment-section" data-post-slug="{{ post.hash_id }}">
