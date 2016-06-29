@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ site_name }}</h1>
+<form action="{% url 'tags:list' %}" method="GET">
+    <input type="text" name="search" placeholder="search tag" required>
+    <input type="submit" value="Search">
+</form>
+<ul>
+    {% for tag in tag_list %}
+    <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
