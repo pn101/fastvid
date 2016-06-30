@@ -10,7 +10,7 @@
 </form>
 <ul>
     {% for tag in tag_list %}
-    <li>{{ tag }}</li>
+    <li><a href="{% url 'tags:detail' slug=tag.name %}">{{ tag }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
