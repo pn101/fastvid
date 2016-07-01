@@ -11,7 +11,7 @@ class FollowView(View):
         following = User.objects.get(username=self.kwargs.get('user_name'))
 
         if follower != following:
-            Follow.objects.create(
+            Follow.objects.get_or_create(
                     follower=follower,
                     following=following,
             )

@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^(?P<user_name>\w+)/$', YourPageView.as_view(), name='yourpage'),
     url(r'^(?P<user_name>\w+)/follow/$', FollowView.as_view(), name='follow'),
+    url(r'^(?P<user_name>\w+)/followinglist/$', FollowingListView.as_view(), name='followinglist'),
 
 ]

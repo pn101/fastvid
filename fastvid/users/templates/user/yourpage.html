@@ -5,6 +5,7 @@
 {% block content %}
 <h1>{{ user.username }}'s Page</h1>
 <a href="{% url 'user:follow' user_name=user.username %}">Follow {{ user.username }}</a>
+<a href="{% url 'user:followinglist' user_name=user.username %}">Following List</a>
 <ul>
     {% for post in posts %}
     <li>
