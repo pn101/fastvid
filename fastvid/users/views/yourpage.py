@@ -15,7 +15,7 @@ class YourPageView(View):
                     'user/yourpage.html',
                     {
                         'site_name': 'Your Page',
-                        'username': user.username,
+                        'user': user,
                         'posts': user.post_set.all(),
                     }
             )
