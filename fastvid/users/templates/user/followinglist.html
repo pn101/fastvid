@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ site_name }}</h1>
+<ul>
+    {% for user in follower.following_set.all %}
+    <li><a href="{% url 'user:yourpage' user_name=user.username %}">{{ user.username }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

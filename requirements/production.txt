@@ -4,3 +4,7 @@ Pillow
 hashids
 python-social-auth
 django-pipeline
+djangorestframework
+celery
+redis
+flower

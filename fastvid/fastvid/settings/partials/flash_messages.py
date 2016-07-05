@@ -7,3 +7,6 @@ LOGIN_SUCCESS_MESSAGE = 'Successfully logged in'
 LOGOUT_SUCCESS_MESSAGE = 'Successfully logged out'
 
 LOGIN_ERROR_MESSAGE = 'Failed to log in. Please try again'
+
+# PostCreate
+POST_CREATE_SUCCESS_MESSAGE = 'Successfully created a new post'

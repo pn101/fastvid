@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ site_name }}{% endblock %}
+
+{% block content %}
+<h1>{{ user.username }}'s Page</h1>
+<a href="{% url 'user:follow' user_name=user.username %}">Follow {{ user.username }}</a>
+<a href="{% url 'user:followinglist' user_name=user.username %}">Following List</a>
+<ul>
+    {% for post in posts %}
+    <li>
+    <img src="{{ post.youtube_thumbnail_url }}" alt="{{ post.title }}" height="68" width="90"></br>
+    <a href="{% url 'posts:detail' slug=post.hash_id %}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
