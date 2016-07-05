@@ -1,0 +1,3 @@
+web: python fastvid/manage.py runserver
+worker: celery --workdir=fastvid/ --app=fastvid.celery:app worker
+flower: celery --workdir=fastvid/ --app=fastvid.celery:app flower
