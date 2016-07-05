@@ -22,3 +22,6 @@ class BaseNotification(models.Model):
 
     class Meta:
         abstract = True
+
+    def send_notification(self):
+        raise NotImplementedError
