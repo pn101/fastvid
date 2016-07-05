@@ -8,3 +8,4 @@ djangorestframework
 celery
 redis
 flower
+dj-database-url
