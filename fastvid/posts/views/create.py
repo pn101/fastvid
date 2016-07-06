@@ -9,7 +9,7 @@ from posts.utils import youtube
 
 class PostCreateView(PermissionRequiredMixin, View):
 
-    permission_required = 'posts.can_create_post'
+    permission_required = 'users.can_create_post'
     raise_exception = True
 
     # TODO: redirect to a more user friendly page

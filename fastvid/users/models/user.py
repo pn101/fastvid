@@ -17,3 +17,8 @@ class User(AbstractUser):
             through=Follow,
             through_fields=('following', 'follower'),
     )
+
+    class Meta:
+        permissions = (
+                ('can_create_post', 'can create post'),
+        )

@@ -3,6 +3,8 @@ from django.views.generic import View
 from django.contrib.auth.models import Permission
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth import get_user_model
+from django.contrib import messages
+from django.conf import settings
 
 from posts.models import Post
 
@@ -39,9 +41,9 @@ class PremiumSignupView(View):
 
         user.user_permissions.add(permission)
 
+        messages.add_message(
+                request,
+                messages.SUCCESS,
+                settings.SIGNUP_SUCCESS_MESSAGE,
+        )
         return redirect('user:login')
-
-    def get_context_data(self, **kwargs):
-        context = super(PremiumSignupView, self).get_context_data(**kwargs)
-        context['site_name'] = 'Premium Signup'
-        return context
